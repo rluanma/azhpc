@@ -9,7 +9,8 @@
 				"Standard_A9",
 				"Standard_H16r",
 				"Standard_H16mr",
-				"Standard_NC24r"
+				"Standard_NC24r",
+				"Standard_HB60rs"
 			],
 			"type": "String",
 			"metadata": {
@@ -134,7 +135,7 @@
 					"keySource": "Microsoft.Storage",
 					"services": {
 						"blob": {
-							"enabled": false
+							"enabled": true
 						}
 					}
 				}
