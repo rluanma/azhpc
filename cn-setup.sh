@@ -24,7 +24,7 @@ EOF
 
 #yum --enablerepo=extras install -y -q epel-release
 #yum install -y -q nfs-utils htop pdsh psmisc
-until yum --disablerepo=openlogic install -y -q nfs-utils
+until yum install -y -q nfs-utils
 do
     sleep 10
 done
