@@ -135,7 +135,7 @@
 					"keySource": "Microsoft.Storage",
 					"services": {
 						"blob": {
-							"enabled": true
+							"enabled": false
 						}
 					}
 				}
