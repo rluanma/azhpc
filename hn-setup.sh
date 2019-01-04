@@ -103,15 +103,15 @@ escape ^]]
 EOF
 chown $USER:$USER /home/$USER/.screenrc
 
-cd /home/$USER
-echo $1 > debug.log
-echo "git clone -b $githubBranch https://github.com/$githubUser/$githubRepo.git" >> debug.log
-git clone -b $githubBranch https://github.com/$githubUser/$githubRepo.git
-chown $USER:$USER -R azhpc
-chmod +x azhpc/scripts/*
-cd /home/$USER/bin
-for i in /home/$USER/azhpc/scripts/*; do
-	ln -s $i
-done
+#cd /home/$USER
+#echo $1 > debug.log
+#echo "git clone -b $githubBranch https://github.com/$githubUser/$githubRepo.git" >> debug.log
+#git clone -b $githubBranch https://github.com/$githubUser/$githubRepo.git
+#chown $USER:$USER -R azhpc
+#chmod +x azhpc/scripts/*
+#cd /home/$USER/bin
+#for i in /home/$USER/azhpc/scripts/*; do
+#	ln -s $i
+#done
 
-rm -f install.py
+#rm -f install.py
