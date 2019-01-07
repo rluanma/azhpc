@@ -256,7 +256,7 @@
 							"fileUris": [
 								"[uri(deployment().properties.templateLink.uri, 'hn-setup.sh')]"
 							],
-							"commandToExecute": "[concat('bash hn-setup.sh ', deployment().properties.templateLink.uri)]",
+							"commandToExecute": "[concat (concat('bash hn-setup.sh ', deployment().properties.templateLink.uri), ' 2>&1 | tee /tmp/hn-setup.log')]",
 							"timestamp": 12345
 						}
 					},
@@ -304,7 +304,7 @@
 										"fileUris": [
 											"[uri(deployment().properties.templateLink.uri, 'cn-setup.sh')]"
 										],
-										"commandToExecute": "bash cn-setup.sh",
+										"commandToExecute": "bash cn-setup.sh 2>&1 | tee /tmp/cn-setup.log",
 										"timestamp": 12345
 									}
 								}
