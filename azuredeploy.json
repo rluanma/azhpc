@@ -3,13 +3,14 @@
 	"contentVersion": "1.0.0.0",
 	"parameters": {
 		"vmSku": {
-			"defaultValue": "Standard_H16r",
+			"defaultValue": "Standard_HB60rs",
 			"allowedValues": [
 				"Standard_A8",
 				"Standard_A9",
 				"Standard_H16r",
 				"Standard_H16mr",
-				"Standard_NC24r"
+				"Standard_NC24r",
+				"Standard_HB60rs"
 			],
 			"type": "String",
 			"metadata": {
@@ -25,13 +26,14 @@
 		},
 		"computeNodeImage": {
 			"type": "string",
-			"defaultValue": "CentOS-HPC_7.1",
+			"defaultValue": "RHEL-7.5",
 			"allowedValues": [
 				"CentOS-HPC_6.5",
 				"CentOS-HPC_6.8",
 				"CentOS-HPC_7.1",
 				"CentOS-HPC_7.3",
-				"CentOS-HPC_7.4"
+				"CentOS-HPC_7.4",
+				"RHEL-7.5"
 			],
 			"metadata": {
 				"description": "The VM image of the compute nodes"
@@ -104,13 +106,19 @@
 				"offer": "UbuntuServer",
 				"sku": "16.04-LTS",
 				"version": "latest"
+			},
+			"RHEL-7.5": {
+				"publisher": "RedHat",
+				"offer": "RHEL",
+				"sku": "7.5",
+				"version": "latest"
 			}
 		},
 		"imageReference": "[variables('hpcImageTypes')[parameters('computeNodeImage')]]",
 		"JBoxType": {
-			"publisher": "OpenLogic",
-			"offer": "CentOS",
-			"sku": "7.1",
+			"publisher": "RedHat",
+			"offer": "RHEL",
+			"sku": "7.5",
 			"version": "latest"
 		},
 		"JBimageReference": "[variables('JBoxType')]",
@@ -206,7 +214,7 @@
 			"location": "[variables('resourceLocation')]",
 			"properties": {
 				"hardwareProfile": {
-					"vmSize": "Standard_H16"
+					"vmSize": "Standard_HB60rs"
 				},
 				"osProfile": {
 					"computerName": "[variables('jumpBoxName')]",
