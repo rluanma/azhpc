@@ -2,6 +2,7 @@
 
 # fail on any error
 set -ex
+echo "Hello"
 
 HEADNODE=10.0.2.4
 
