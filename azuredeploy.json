@@ -26,13 +26,14 @@
 		},
 		"computeNodeImage": {
 			"type": "string",
-			"defaultValue": "CentOS-HPC_7.4",
+			"defaultValue": "RHEL-7.5",
 			"allowedValues": [
 				"CentOS-HPC_6.5",
 				"CentOS-HPC_6.8",
 				"CentOS-HPC_7.1",
 				"CentOS-HPC_7.3",
-				"CentOS-HPC_7.4"
+				"CentOS-HPC_7.4",
+				"RHEL-7.5"
 			],
 			"metadata": {
 				"description": "The VM image of the compute nodes"
@@ -98,6 +99,12 @@
 				"publisher": "OpenLogic",
 				"offer": "CentOS-HPC",
 				"sku": "7.4",
+				"version": "latest"
+			},
+			"RHEL-7.5": {
+				"publisher": "RedHat",
+				"offer": "RHEL",
+				"sku": "7.5",
 				"version": "latest"
 			},
 			"Ubuntu_1604": {
