@@ -37,3 +37,6 @@ sudo systemctl restart waagent
 
 # pre-reqs for mpi
 sudo yum install -y numactl numactl-devel libxml2-devel byacc
+
+# disable firewall
+sudo systemctl stop firewalld
