@@ -48,4 +48,4 @@ git config --global user.email "jijos@microsoft.com"
 cp /etc/sysctl.conf /tmp/sysctl.conf
 echo "vm.zone_reclaim_mode = 1" >> /tmp/sysctl.conf
 sudo cp /tmp/sysctl.conf /etc/sysctl.conf
-sysctl -p
+sudo sysctl -p
