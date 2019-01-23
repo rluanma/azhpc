@@ -40,7 +40,6 @@ sudo yum install -y numactl numactl-devel libxml2-devel byacc
 
 # disable firewall
 sudo systemctl stop firewalld
-sudo systemctl stop waagent.service
 
 git config --global user.name "Jithin Jose"
 git config --global user.email "jijos@microsoft.com"
