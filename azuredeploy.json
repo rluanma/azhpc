@@ -21,9 +21,9 @@
 		},
 		"computeNodeImage": {
 			"type": "string",
-			"defaultValue": "CentOS-7.5",
+			"defaultValue": "CentOS-7.6",
 			"allowedValues": [
-				"CentOS-7.5"
+				"CentOS-7.6"
 			],
 			"metadata": {
 				"description": "The VM image of the compute nodes"
@@ -61,10 +61,10 @@
 		"nicName": "[concat(variables('namingInfix'), 'nic')]",
 		"ipConfigName": "[concat(variables('namingInfix'), 'ipconfig')]",
 		"hpcImageTypes":{
-			"CentOS-7.5": {
+			"CentOS-7.6": {
 				"publisher": "OpenLogic",
 				"offer": "CentOS",
-				"sku": "7.5",
+				"sku": "7.6",
 				"version": "latest"
 			}
 		},
@@ -72,7 +72,7 @@
 		"JBoxType": {
 			"publisher": "OpenLogic",
 			"offer": "CentOS",
-			"sku": "7.5",
+			"sku": "7.6",
 			"version": "latest"
 		},
 		"JBimageReference": "[variables('JBoxType')]",
