@@ -186,9 +186,9 @@
 					}
 				},
 				"storageProfile": {
-					"imageReference": "[variables('JBimageReference')]",
 					"osDisk": {
-						"createOption": "FromImage"
+						"createOption": "FromImage",
+						"name": "CentOS-76-HPC"
 					}
 				},
 				"networkProfile": {
