@@ -186,9 +186,11 @@
 					}
 				},
 				"storageProfile": {
+					"imageReference": {
+                        "id": "[resourceId('/subscriptions/d2c9544f-4329-4642-b73d-020e7fef844f/resourceGroups/jijos-image-rg/providers/Microsoft.Compute/images/', 'CentOS-76-HPC')]"
+                    },
 					"osDisk": {
-						"createOption": "FromImage",
-						"name": "CentOS-76-HPC"
+						"createOption": "FromImage"
 					}
 				},
 				"networkProfile": {
