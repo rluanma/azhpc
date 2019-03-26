@@ -5,7 +5,8 @@
 		"vmSku": {
 			"defaultValue": "Standard_HC44rs",
 			"allowedValues": [
-                "Standard_HC44rs"
+				"Standard_HC44rs",
+				"Standard_HB60rs"
 			],
 			"type": "String",
 			"metadata": {
@@ -21,9 +22,10 @@
 		},
 		"computeNodeImage": {
 			"type": "string",
-			"defaultValue": "CentOS-7.6",
+			"defaultValue": "CentOS-7.6-HPC",
 			"allowedValues": [
-				"CentOS-7.6"
+				"CentOS-7.6",
+				"CentOS-7.6-HPC"
 			],
 			"metadata": {
 				"description": "The VM image of the compute nodes"
@@ -66,19 +68,16 @@
 				"offer": "CentOS",
 				"sku": "7.6",
 				"version": "latest"
+			},
+			"CentOS-7.6-HPC": {
+				"id": "[resourceId('d2c9544f-4329-4642-b73d-020e7fef844f', 'jijos-image-rg', 'Microsoft.Compute/images', 'CentOS-76-HPC')]"
 			}
 		},
 		"imageReference": "[variables('hpcImageTypes')[parameters('computeNodeImage')]]",
-		"JBoxType": {
-			"publisher": "OpenLogic",
-			"offer": "CentOS",
-			"sku": "7.6",
-			"version": "latest"
-		},
-		"JBimageReference": "[variables('JBoxType')]",
 		"computeApiVersion": "2016-04-30-preview",
 		"networkApiVersion": "2016-03-30",
-		"storageApiVersion": "2016-01-01"
+		"storageApiVersion": "2016-01-01",
+		"skuType": "[parameters('vmSku')]"
 	},
 	"resources": [
 		{
@@ -168,7 +167,7 @@
 			"location": "[variables('resourceLocation')]",
 			"properties": {
 				"hardwareProfile": {
-					"vmSize": "Standard_HC44rs"
+					"vmSize": "[variables('skuType')]"
 				},
 				"osProfile": {
 					"computerName": "[variables('jumpBoxName')]",
@@ -186,9 +185,7 @@
 					}
 				},
 				"storageProfile": {
-					"imageReference": {
-                        "id": "[resourceId('d2c9544f-4329-4642-b73d-020e7fef844f', 'jijos-image-rg', 'Microsoft.Compute/images', 'CentOS-76-HPC')]"
-                    },
+					"imageReference": "[variables('imageReference')]",
 					"osDisk": {
 						"createOption": "FromImage"
 					}
@@ -235,7 +232,7 @@
 		{
 			"type": "Microsoft.Compute/virtualMachineScaleSets",
 			"sku": {
-				"name": "[parameters('vmSku')]",
+				"name": "[variables('skuType')]",
 				"tier": "Standard",
 				"capacity": "[parameters('instanceCount')]"
 			},
