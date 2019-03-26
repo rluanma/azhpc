@@ -47,7 +47,7 @@
 		},
 		"password": {
 			"maxLength": 32,
-			"type": "String",
+			"type": "securestring",
 			"metadata": {
 				"description": "User password for compute nodes."
 			}
@@ -191,7 +191,7 @@
 						"ssh": {
 							"publicKeys": [
 								{
-									"path": "[concat('/home/', [parameters('userName')], '/.ssh/authorized_keys')]",
+									"path": "[concat('/home/', parameters('userName'), '/.ssh/authorized_keys')]",
 									"keyData": "[parameters('rsaPublicKey')]"
 								}
 							]
@@ -230,7 +230,7 @@
 							"fileUris": [
 								"[uri(deployment().properties.templateLink.uri, 'hn-setup.sh')]"
 							],
-							"commandToExecute": "[concat('bash hn-setup.sh ', deployment().properties.templateLink.uri, ' ', [parameters('userName')])]",
+							"commandToExecute": "[concat('bash hn-setup.sh ', deployment().properties.templateLink.uri, ' ', parameters('userName'))]",
 							"timestamp": 12345
 						}
 					},
@@ -278,7 +278,7 @@
 										"fileUris": [
 											"[uri(deployment().properties.templateLink.uri, 'cn-setup.sh')]"
 										],
-										"commandToExecute": "[concat('bash cn-setup.sh ', [variables('jumpBoxName'), ' ', [parameters('userName')]])]",
+										"commandToExecute": "[concat('bash cn-setup.sh ', variables('jumpBoxName'), ' ', parameters('userName'))]",
 										"timestamp": 12345
 									}
 								}
