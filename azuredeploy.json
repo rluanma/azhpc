@@ -187,7 +187,7 @@
 				},
 				"storageProfile": {
 					"imageReference": {
-                        "id": "[resourceId('Microsoft.Compute/images', 'CentOS-76-HPC')]"
+                        "id": "[resourceId('resourceGroups/jijos-image-rg/providers/Microsoft.Compute/images', 'CentOS-76-HPC')]"
                     },
 					"osDisk": {
 						"createOption": "FromImage"
