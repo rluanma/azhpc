@@ -25,6 +25,7 @@
 			"defaultValue": "CentOS-7.6-HPCScrub1",
 			"allowedValues": [
 				"CentOS-7.6",
+				"CentOS-7.6-HPC1",
 				"CentOS-7.6-HPCScrub1"
 			],
 			"metadata": {
