@@ -3,9 +3,9 @@
 myip=$(/sbin/ifconfig eth0 | sed -n 's/ *inet [^0-9]*\([0-9\.]\+\).*/\1/p')
 iprange=${myip%.*}.*
 nmap -sn $iprange | grep -Eo '([0-9][0-9.]+$)' | grep -v "^$myip$" > $HOME/bin/hostiplist
-for i in $(<$HOME/bin/hostiplist); do ssh $i hostname; done > $HOME/bin/hostlist
+for i in $(<$HOME/bin/hostiplist); do ssh $i hostname; done > $HOME/bin/hostfile
 
-sshin=$(wc -l < $HOME/bin/hostlist)
+sshin=$(wc -l < $HOME/bin/hostfile)
 ipcount=$(wc -l < $HOME/bin/hostiplist)
 
 if [ $sshin -eq $ipcount ]; then
