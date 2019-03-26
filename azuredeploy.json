@@ -191,7 +191,6 @@
 						"ssh": {
 							"publicKeys": [
 								{
-									"path": "/home/hpcuser/.ssh/authorized_keys",
 									"path": "[concat('/home/', [parameters('userName')], '/.ssh/authorized_keys')]",
 									"keyData": "[parameters('rsaPublicKey')]"
 								}
