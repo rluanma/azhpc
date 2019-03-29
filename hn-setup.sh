@@ -34,12 +34,12 @@ systemctl restart nfs-server
 
 USER=$2
 cat << EOF >> /home/$USER/.bashrc
-export WCOLL=/home/$USER/bin/hostfile
+export WCOLL=/home/$USER/scripts/hostfile
 EOF
 chown $USER:$USER /home/$USER/.bashrc
 
-touch /home/$USER/bin/hostfile
-chown $USER:$USER /home/$USER/bin/hostfile
+touch /home/$USER/scripts/hostfile
+chown $USER:$USER /home/$USER/scripts/hostfile
 
 # Setup passwordless ssh to compute nodes
 ssh-keygen -f /home/$USER/.ssh/id_rsa -t rsa -N ''
