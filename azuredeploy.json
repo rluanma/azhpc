@@ -26,7 +26,8 @@
 			"allowedValues": [
 				"CentOS-7.6",
 				"CentOS-7.6-HPC1",
-				"CentOS-7.6-HPCScrub1"
+				"CentOS-7.6-HPCScrub1",
+				"CentOS-7.6-HPCScrub1-RW"
 			],
 			"metadata": {
 				"description": "The VM image of the compute nodes"
@@ -89,6 +90,9 @@
 			},
 			"CentOS-7.6-HPC1": {
 				"id": "[resourceId('75c5e023-db83-4675-8531-fd0150c82176', 'spark-rg', 'Microsoft.Compute/images', 'CentOS-76-HPC')]"
+			},
+			"CentOS-7.6-HPCScrub1-RW": {
+				"id": "[resourceId('d2c9544f-4329-4642-b73d-020e7fef844f', 'rgwave-rg', 'Microsoft.Compute/images', 'CentOS-76-HPC')]"
 			}
 		},
 		"imageReference": "[variables('hpcImageTypes')[parameters('computeNodeImage')]]",
