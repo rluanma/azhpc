@@ -22,9 +22,10 @@
 		},
 		"computeNodeImage": {
 			"type": "string",
-			"defaultValue": "CentOS-7.6-HPCScrub1",
+			"defaultValue": "CentOS-7.6 HPC",
 			"allowedValues": [
 				"CentOS-7.6",
+				"CentOS-7.6 HPC",
 				"CentOS-7.6-HPC1",
 				"CentOS-7.6-HPCScrub1",
 				"CentOS-7.6-HPCScrub1-RW"
@@ -82,6 +83,12 @@
 			"CentOS-7.6": {
 				"publisher": "OpenLogic",
 				"offer": "CentOS",
+				"sku": "7.6",
+				"version": "latest"
+			},
+			"CentOS-7.6 HPC": {
+				"publisher": "OpenLogic",
+				"offer": "CentOS-HPC",
 				"sku": "7.6",
 				"version": "latest"
 			},
