@@ -2,10 +2,6 @@
 	"$schema": "http://schema.management.azure.com/schemas/2015-01-01-preview/deploymentTemplate.json",
 	"contentVersion": "1.0.0.0",
 	"parameters": {
-		"tipSessionId": {
-			"type": "string",
-			"defaultValue": ""
-		},
 		"vmSku": {
 			"defaultValue": "Standard_HC44rs",
 			"allowedValues": [
@@ -213,9 +209,6 @@
 			"name": "[variables('jumpBoxName')]",
 			"apiVersion": "[variables('computeApiVersion')]",
 			"location": "[variables('resourceLocation')]",
-			"tags": {
-				"TipNode.SessionId":"[parameters('tipSessionId')]"
-			},
 			"properties": {
 				"hardwareProfile": {
 					"vmSize": "[variables('skuType')]"
@@ -290,9 +283,6 @@
 			"name": "[variables('namingInfix')]",
 			"apiVersion": "[variables('computeApiVersion')]",
 			"location": "[variables('resourceLocation')]",
-			"tags": {
-				"TipNode.SessionId":"[parameters('tipSessionId')]"
-			},
 			"properties": {
 				"overprovision": true,
 				"upgradePolicy": {
